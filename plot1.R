@@ -1,9 +1,11 @@
 # Bar plot to show the total emissions for
-# the fours years in the data. A trend
-# line is included to explicitly show that
-# emissions have decreased from 1999 to 2008.
+# the fours years in the data. 
 
-# This function assumes the pollution data file
+# The plot shows that emissions have decreased
+# from 1999 to 2008.
+
+
+# This function assumes the summary data file
 # is in the current working directory.
 generatePlot <- function()
 {
@@ -23,11 +25,6 @@ generatePlot <- function()
      main=expression('Total Emissions of PM'[2.5]),
      xlab="Year",
      ylab="Thousands of Tons")
-    
-    df <- data.frame(
-     matrix(c(emissions, as.numeric(names(years))), nrow=4))
-    colnames(df) <- c("Emissions", "Year")
-    lines(myPlot, fitted(lm(df$Emissions ~ df$Year, data=df)), col="red")
     
     dev.off()
 }

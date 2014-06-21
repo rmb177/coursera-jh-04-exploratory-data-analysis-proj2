@@ -1,11 +1,15 @@
 # Bar plot to show the total emissions for
 # Baltimore City, MD for the fours years in 
-# the data. A trend line is included to 
-# explicitly show that emissions have 
-# decreased from 1999 to 2008.
+# the data. 
 
-# This function assumes both data files are
-# in the current working directory
+# The plot shows that overall emissions
+# have decreased from 1999 to 2008, although
+# there was an increase in emissions from 2002
+# to 2005.
+
+
+# This function assumes the summary data file
+# is in the current working directory.
 generatePlot <- function()
 {
     # Read in data and work with the columns needed
@@ -20,16 +24,9 @@ generatePlot <- function()
     
     myPlot <- barplot(unlist(emissions),
                       col="#daf0dd",
-                      main=expression('Baltimore City, MD: Total Emissions of PM'[2.5]),
+                      main=expression('Total Emissions of PM'[2.5] * ' in Baltimore City, MD'),
                       xlab="Year",
                       ylab="Tons")
-    
-    df <- data.frame(
-        matrix(c(as.numeric(emissions), as.numeric(names(years))), nrow=4))
-    colnames(df) <- c("Emissions", "Year")
-    linearModel <- lm(Emissions ~ year, pollutionData)
-    lines(myPlot, fitted(lm(df$Emissions ~ df$Year, data=df)), col="red")
-    
     dev.off()
 }
 
