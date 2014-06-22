@@ -10,8 +10,7 @@
 # asked for in the problem.
 
 # The plot shows that overall emissions from motor-vehicle related
-# sources decreased from 1999 to 2008. However, emissions
-# did rise in 2005.
+# sources decreased from 1999 to 2008.
 
 # This function assumes both the summary data file
 # and clasification file are in the current working directory.
@@ -23,14 +22,14 @@ generatePlot <- function()
     
     # Pull out all motor vehicle related classifications from scc data and merge data
     vehicleClassifications <- sccData[grepl("Vehicles ", sccData[,c("SCC.Level.Three")]), ]
-    baltimoreData <- neiData[neiData$fips == "24510", c("year", "Emissions")]
+    baltimoreData <- neiData[neiData$fips == "24510",]
     
     mergedData <- merge(baltimoreData, vehicleClassifications)
     
     # Split by year and sum up totals
     years <- split(mergedData$Emissions, mergedData$year)
     emissions <- lapply(years, sum)
-    emissions <- unlist(emissions) / 1000
+    emissions <- unlist(emissions)
     
     png("plot5.png", width=620, height=480)
     
@@ -38,7 +37,7 @@ generatePlot <- function()
                       col="#daf0dd",
                       main=expression('Total Emissions of PM'[2.5] * ' from Motor Vehicle Related Sources in Baltimore City, MD'),
                       xlab="Year",
-                      ylab="Thousands of Tons")
+                      ylab="Tons")
     
     dev.off()
 }
