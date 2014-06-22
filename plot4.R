@@ -1,4 +1,4 @@
-# Bar plot to show the total emissions for
+# Bar plot to show the total PM25 emissions for
 # coal-combustion related sources.
 
 # Coal-combustion sources were determined by searching
@@ -26,6 +26,8 @@ generatePlot <- function()
     # Split by year and sum up totals
     years <- split(mergedData$Emissions, mergedData$year)
     emissions <- lapply(years, sum)
+    
+    # Divide emissions by 1000 to make the graph more readable
     emissions <- unlist(emissions) / 1000
     
     png("plot4.png")

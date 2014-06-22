@@ -1,4 +1,4 @@
-# Bar plot to show the total emissions for
+# Bar plot to show the total PM25 emissions for
 # Baltimore City, MD for the fours years in 
 # the data. Emissions are broken down by the 
 # type of emission (NON-ROAD, NONPOINT, ON-ROAD,

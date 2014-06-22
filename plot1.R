@@ -1,4 +1,4 @@
-# Bar plot to show the total emissions for
+# Bar plot to show the total PM25 emissions for
 # the fours years in the data. 
 
 # The plot shows that emissions have decreased
@@ -16,6 +16,8 @@ generatePlot <- function()
     # Split by year and sum up totals
     years <- split(pollutionData$Emissions, pollutionData$year)
     emissions <- lapply(years, sum)
+    
+    # Divide totals by 1000 to make graph more readable
     emissions <- unlist(emissions) / 1000
     
     png("plot1.png")

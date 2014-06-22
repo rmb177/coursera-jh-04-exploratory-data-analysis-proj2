@@ -1,5 +1,5 @@
 # Bar plot to show the total motor-vehicle
-# source emissions for Baltimore City, MD vs.
+# source PM25 emissions for Baltimore City, MD vs.
 # Los Angeles County, CA.
 
 # Motor Vehicle sources were determined by searching

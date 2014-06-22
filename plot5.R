@@ -1,4 +1,4 @@
-# Bar plot to show the total emissions for
+# Bar plot to show the total PM25 emissions for
 # motor vehicle related sources.
 
 # Motor Vehicle sources were determined by searching
@@ -34,10 +34,10 @@ generatePlot <- function()
     png("plot5.png", width=620, height=480)
     
     myPlot <- barplot(emissions,
-                      col="#daf0dd",
-                      main=expression('Total Emissions of PM'[2.5] * ' from Motor Vehicle Related Sources in Baltimore City, MD'),
-                      xlab="Year",
-                      ylab="Tons")
+     col="#daf0dd",
+     main=expression('Total Emissions of PM'[2.5] * ' from Motor Vehicle Related Sources in Baltimore City, MD'),
+     xlab="Year",
+     ylab="Tons")
     
     dev.off()
 }
