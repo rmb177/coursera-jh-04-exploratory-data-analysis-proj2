@@ -28,6 +28,7 @@ generatePlot <- function()
     aggregateData$year <- as.factor(aggregateData$year)
     
     png("plot3.png")    
+    
     myPlot <- qplot(year, Emissions, data=aggregateData, 
      facets = . ~ type, 
      geom="bar", 

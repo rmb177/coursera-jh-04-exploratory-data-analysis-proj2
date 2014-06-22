@@ -23,10 +23,11 @@ generatePlot <- function()
     png("plot2.png")
     
     myPlot <- barplot(unlist(emissions),
-                      col="#daf0dd",
-                      main=expression('Total Emissions of PM'[2.5] * ' in Baltimore City, MD'),
-                      xlab="Year",
-                      ylab="Tons")
+     col="#daf0dd",
+     main=expression('Total Emissions of PM'[2.5] * ' in Baltimore City, MD'),
+     xlab="Year",
+     ylab="Tons")
+
     dev.off()
 }
 
