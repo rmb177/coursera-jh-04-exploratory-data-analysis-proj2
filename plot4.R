@@ -7,6 +7,10 @@
 # this filtering showed that it provided the sources
 # asked for in the problem.
 
+# The plot shows that emissions from coal-combustion 
+# sources have decreased from 1999 to 2008, with an
+# especialy big drop from 2005 to 2008.
+
 # This function assumes both the summary data file
 # and clasification file are in the current working directory.
 generatePlot <- function()
